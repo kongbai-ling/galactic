@@ -1,0 +1,31 @@
+# ========== 必须 LFS 的大文件 ==========
+
+# 高清贴图 & 源文件
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+
+# 模型（真正的模型文件，不是缓存）
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.dae filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+
+# 音频（长音频/音乐）
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+
+# 视频
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# ========== 小文件直接 Git 管理（不要 LFS）==========
+
+# 小贴图（游戏素材、UI、图标）
+# *.png  ← 删除这一行！
+# *.jpg  ← 删除这一行！
+# 如果个别 PNG 很大（如 4K 图集），单独处理，不要全局配
+
+# 缓存/编译文件（本来就不该提交）
+# *.obj  ← 删除这一行！真正的模型用 .fbx/.dae
