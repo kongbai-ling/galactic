@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7364409812221981179}
   - component: {fileID: 8576192144678962155}
   - component: {fileID: 6256014936858025056}
+  - component: {fileID: 3743232960134771649}
   m_Layer: 5
   m_Name: packUI
   m_TagString: Untagged
@@ -122,7 +123,41 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8576192144678962155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3743232960134771649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559014291521994764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04cd07124a3ef642bb1d588ead3bf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+    itemName: 
+    itemType: 
+    itemID: 0
+    itemdescription: 
+    weight: 0
+    icon: {fileID: 0}
+  itemImage: {fileID: 8396381348006953864}
+  itemnumberText: {fileID: 3374588181240765525}
+  itemnumber: 0
 --- !u!1 &6025594072036861530
 GameObject:
   m_ObjectHideFlags: 0

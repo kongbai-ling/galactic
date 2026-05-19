@@ -247,6 +247,7 @@ public void PlayerJump()
         }
        
     }
+    //玩家冲刺
     public void playerdash()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && !IsDead)
@@ -377,6 +378,7 @@ public void Comboreset()
     // 重置连招数
     combo = 1;
 }
+//生成攻击盒
 public void BuildAttackBox()
     {
         GameObject go;
@@ -430,7 +432,8 @@ public void BuildAttackBox()
         float damage = ATK * MF;
         return damage;
     }
-    public void GetHit(float damage)
+    //受到攻击伤害
+    public void GetHit(float damage,float Force)
     {
         if (!IsDead&&!IsGetHit)
         {
@@ -439,6 +442,8 @@ public void BuildAttackBox()
             Invoke(nameof(GetHitEnd), 0.6f);
             playerHp.value = NowHP / MaxHP;
             PlayerHpText.text = NowHP.ToString();
+            if (isright){Rg.AddForce(new Vector2(-Force, 0));}
+            else{ Rg.AddForce(new Vector2(Force, 0));}
             GameObject go = Instantiate(GetHitEffect, GetHitEffectpositi.transform.position, GetHitEffectpositi.transform.rotation, GetHitEffectpositi.transform);
             go.transform.localScale = GetHitEffectpositi.transform.lossyScale;
             go.GetComponent<Text>().text = damage.ToString();
@@ -457,7 +462,7 @@ public void BuildAttackBox()
     }
     public void AttributeManager(int AttibuteID)
     {
-        if (GameManager.Instance.EXP == 0)
+        if (GameManager.Instance.EXP <1)
         {
             UGUIManager.Instance.PromptBoxShow("技能点不足");
             return;
@@ -471,6 +476,7 @@ public void BuildAttackBox()
                     Defense -= 0.05f;
                     Debug.Log("防御力提升");
                     GameManager.Instance.EXP -= 1;
+                    GameManager.Instance.Defenselv += 1;
                     UGUIManager.Instance.EXP -= 1;
                     return;
                 }
@@ -484,6 +490,7 @@ public void BuildAttackBox()
                 {
                     ATK += 2;
                     GameManager.Instance.EXP -= 1;
+                    GameManager.Instance.Powerlv += 1;
                     UGUIManager.Instance.EXP -= 1;
                 }else
                 {
@@ -495,6 +502,7 @@ public void BuildAttackBox()
                 {
                     speed += 0.5f;
                     GameManager.Instance.EXP -= 1;
+                    GameManager.Instance.Speedlv += 1;
                     UGUIManager.Instance.EXP -= 1;
                 }
                 else
@@ -504,9 +512,11 @@ public void BuildAttackBox()
                 break;
         }
         UGUIManager.Instance.EXPUGUIManager();
+        UGUIManager.Instance.ResetAttLvText(AttibuteID);
     }
     public void GetHitEnd()
     {
+        Rg.velocityX = 0;
         ani.SetBool("IsGetHit", false);
         if (IsDead)
         {

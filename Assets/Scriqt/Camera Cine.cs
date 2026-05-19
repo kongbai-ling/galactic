@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CameraCine : MonoBehaviour
@@ -20,4 +21,8 @@ public class CameraCine : MonoBehaviour
         backgroungd.position += newpos2;
         lastpos = transform.position;
     }
+
+    
 }
+
+

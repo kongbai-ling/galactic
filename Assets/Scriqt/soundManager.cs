@@ -28,7 +28,6 @@ public class soundManager : MonoBehaviour
     }
     void Start()
     {
-        playBGM(0);
     }
 
     // Update is called once per frame

@@ -372,8 +372,9 @@ MonoBehaviour:
   MaxHP: 100
   NowHP: 0
   IsGetHit: 0
-  GetHitAddForce: 300
+  GetHitAddForce: 800
   Enemyandposition: {fileID: 6686820766953097556}
+  CurrnteItem: {fileID: 4734396517344383757, guid: b0ae0be712020d543aac0b7ce892904e, type: 3}
   hpslider: {fileID: 2521740849749255242}
   hpTextEff: {fileID: 6560741455022723571, guid: 16c53c6c35615f94ba2b06fb01823634, type: 3}
   hpTextposition: {fileID: 1101393123652198235}
@@ -948,7 +949,7 @@ Transform:
   - {fileID: 6346034812806418803}
   - {fileID: 3038260652999809669}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6784867721222338250
 GameObject:

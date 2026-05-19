@@ -15,7 +15,9 @@ public class PlayerAttackbox : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            TimeManager.FrameFreeze(0.1f);
             collision.GetComponent<EnemyBase>().GetHit(damage);
+            CameraShakeManager.Shake(0.3f, 2, 0.15f, Vector2.one);
         }
     }
 }

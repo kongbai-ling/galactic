@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
     private bool IsOver;
     [Header("PlayerAtt")]
     public float EXP;
+    [SerializeField]private float DefenseLv;
+    public float Defenselv { get { return DefenseLv; } set { DefenseLv = value;} }
+    [SerializeField]private float PowerLv;
+    public float Powerlv { get { return PowerLv; } set { PowerLv = value; } }
+    [SerializeField]private float SpeedLv;
+    public float Speedlv { get { return SpeedLv; } set { SpeedLv = value; } }
     [Header("itme")]
     public ItemData Ltemdata;
     
@@ -46,7 +52,7 @@ public class GameManager : MonoBehaviour
         EXP = EXP + exp;
         if (EXP >= 1)
         {
-            UGUIManager.Instance.EXP += 1;
+            UGUIManager.Instance.EXP = (int)EXP;
             UGUIManager.Instance.EXPUGUIManager();
         }
     }
@@ -80,6 +86,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    //拷贝任务数据
     public void CopyTaskData(TaskData source, CurrnetTaskData target)
     {
         target.TaskID = source.TaskID;
@@ -90,9 +97,23 @@ public class GameManager : MonoBehaviour
         target.CurrnetTaskEnemyeNumber = source.CurrnetTaskEnemyeNumber;
         target.TaskoverNumber = source.TaskoverNumber;
     }
-    public void ItemFallManager()
+    public ItemList ItemFallManager()
     {
-        float random = Random.Range(0, 100);
-
+        float total = 0;
+        foreach (ItemList item in Ltemdata.items)
+        {
+            total += item.weight;
+        }
+        total = Random.Range(0, total);
+        float cumulative = 0;
+        foreach (ItemList itemer in Ltemdata.items)
+        {
+            cumulative += itemer.weight;
+            if(total <= cumulative)
+            {
+                return itemer;
+            }
+        }
+        return null;
     }
 }

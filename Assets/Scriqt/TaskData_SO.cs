@@ -10,27 +10,26 @@ public class TaskData_SO : ScriptableObject
 }
 [System.Serializable]
 public class TaskData {
-    [Header("浠诲姟ID")]
+    [Header("任务ID")]
     public int TaskID;
-    [Header("浠诲姟鐘舵€")]
+    [Header("任务是否触发")]
     public bool TaskState;
-    [Header("浠诲姟绫诲瀷")]
+    [Header("任务类型")]
     public string TaskType;
-    [Header("浠诲姟鍚嶇О")]
+    [Header("任务名称")]
     public string TaskName;
-    [Header("浠诲姟绠€浠")]
+    [Header("任务描述")]
     public string TaskText;
-    [Header("浠诲姟瀹屾垚鏉′欢")]
-    [Header("浠诲姟瀹屾垚鎬墿鐨勭被鍨")]
+    [Header("任务目标类型")]
     public int  TaskEnemyesType;
-    [Header("浠诲姟鐜板湪Kill鎬墿鏁伴噺")]
+    [Header("现在任务击杀目标敌人数量")]
     public int CurrnetTaskEnemyeNumber;
-    [Header("浠诲姟瀹屾垚鎬墿鏁伴噺")]
+    [Header("任务结束敌人数量")]
     public int TaskoverNumber;
     [Header("TaskOverEnd")]
-    [Header("浠诲姟鏄惁瀹屾垚")]
+    [Header("任务是否完成")]
     public bool TaskOver;
-    [Header("浠诲姟瀹屾垚濂栧姳")]
+    [Header("奖励")]
     public string TaskReward;
 
 

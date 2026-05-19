@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4543417326519719713}
   - component: {fileID: 7347793628571290992}
-  m_Layer: 0
+  - component: {fileID: 1870327466225656069}
+  m_Layer: 12
   m_Name: itembox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,9 +67,28 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.017697906, y: 0.005725956}
-  m_Size: {x: 0.27895966, y: 0.3114519}
+  m_Offset: {x: -0.009853887, y: 0.005725956}
+  m_Size: {x: 0.31818017, y: 0.31818017}
   m_Direction: 0
+--- !u!114 &1870327466225656069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516032178479255075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99afe3305025f2642ba074b52ba83ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iteminformation:
+    itemName: 
+    itemType: 
+    itemID: 0
+    itemdescription: 
+    weight: 0
+    icon: {fileID: 0}
 --- !u!1 &4734396517344383757
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +100,7 @@ GameObject:
   - component: {fileID: 9198732745047675849}
   - component: {fileID: 816411385518068567}
   - component: {fileID: 7507825930385395073}
-  - component: {fileID: 1657794223057369675}
+  - component: {fileID: 502429069970811152}
   m_Layer: 11
   m_Name: item
   m_TagString: Untagged
@@ -102,7 +122,7 @@ Transform:
   m_Children:
   - {fileID: 4543417326519719713}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &816411385518068567
 SpriteRenderer:
@@ -145,7 +165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3653192047798930668, guid: 620c933a137775a4fb3a44fc2b3fcfab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +173,7 @@ SpriteRenderer:
   m_Size: {x: 0.28, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &7507825930385395073
@@ -193,7 +213,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.008588838, y: 0.0057258606}
   m_Size: {x: 0.33153334, y: 0.33153334}
   m_Direction: 0
---- !u!50 &1657794223057369675
+--- !u!50 &502429069970811152
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
